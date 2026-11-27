@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Meal Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Weekly Meal Planner</h1>
+        <p class="subtitle">Plan your meals for the entire week!</p>
+
+        <div class="planner">
+            <h2>Manage Your Meals</h2>
+
+            <label for="day">Select Day:</label>
+            <select id="day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+
+            <label for="mealType">Select Meal Type:</label>
+            <select id="mealType">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+
+            <label for="mealInput">Enter Meal:</label>
+            <input type="text" id="mealInput"
+                   placeholder="Example: Idli and Sambar">
+
+            <div class="buttons">
+                <button onclick="addMeal()">Add Meal</button>
+                <button onclick="replaceMeal()">Replace Meal</button>
+                <button onclick="removeMeal()" class="remove">
+                    Remove Meal
+                </button>
+            </div>
+
+            <p id="message" aria-live="polite"></p>
+        </div>
+
+        <div class="counter">
+            Filled Meal Slots: <span id="count">0</span> / 21
+        </div>
+
+        <h2>Weekly Meal Timetable</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Breakfast</th>
+                        <th>Lunch</th>
+                        <th>Dinner</th>
+                    </tr>
+                </thead>
+
+                <tbody id="mealTable">
+                    <!-- Rows are created using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+     <button type="button" onclick="addMeal()">
+    Add Meal
+</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
